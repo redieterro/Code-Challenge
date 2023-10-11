@@ -1,0 +1,9 @@
+tar -×f /home/ubuntu/898557-linux-permissions-fixing/archive.tar.gz
+chmod -R 0664 /home/ubuntu/898557-linux-permissions-fixing/
+
+base_dir = "/home/ubuntu/898557-linux-permissions-fixing/"
+ 
+find "$base_dir" -type d -exec chmod 0775 {} \:
+
+sudo chow -R nobody: nogroup/home/ubuntu/898557-linux-permissions-fixing/
+tar -czvf/tmp/archive.tar.gz -C /home/ubuntu/898557-linux-permissions-fixing/ 
